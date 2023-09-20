@@ -16,7 +16,12 @@ function createTextInput(event) {
     //criar novo botão
     let newButton = document.createElement('button')
     newButton.id = `button_${count}`
-    newButton.onclick = 
+    newButton.onclick = function(){
+        if (this.parentNode.parentNode.childElementCount > 1) {
+            this.parentNode.remove()
+        }
+    }
+    
     newLi.appendChild(newButton)
 
     //criar novo icon
@@ -50,8 +55,4 @@ function createTextInput(event) {
     lastInput = newInput
     lastInput.focus()
     count++
-}
-
-function deleteInput() {
-    this.id = 'oi'
 }
