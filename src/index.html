@@ -11,6 +11,23 @@
     <main class="w-screen min-h-screen flex items-center justify-center">
         <section class="bg-sky-500 w-fit p-6 rounded-lg mt-28 mb-28">
             <h1 class="text-5xl text-center mb-6">To-Do List</h1>
+            <ol class="bg-yellow-100 rounded-lg p-8">
+                <li class="flex gap-2 mb-2 items-center">
+                    <button class="material-symbols-outlined text-red-600 opacity-80 scale-[0.90]">
+                        delete
+                    </button>
+                    <div class="flex flex-col">
+                        <button class="material-symbols-outlined scale-[0.7] text-gray-700">
+                            keyboard_arrow_up
+                        </button>
+                        <button class="material-symbols-outlined scale-[0.7] text-gray-700">
+                            keyboard_arrow_down
+                        </button>
+                    </div>
+                    <input type="text" class="outline-none bg-transparent border-gray-600 border-b-[1px] w-full">
+                    <input type="checkbox">
+                </li>
+            </ol>
             <ol id="list" class="min-w-[600px] min-h-[600px] bg-yellow-100 rounded-lg p-8">
                 
             </ol>
