@@ -9,13 +9,8 @@ function checkEnterKey(event) {
     }
 }
 
-function moveItem(item, direction) {
-    let li = item.parentNode.parentNode
-    if (direction === -1 && li.previousElementSibling) {
-        li.parentNode.insertBefore(li, li.previousElementSibling)
-    } else if (direction === 1 && li.nextElementSibling) {
-        li.parentNode.insertBefore(li, li.nextElementSibling.nextElementSibling)
-    }
+function dragElement() {
+    
 }
 
 function createTextInput() {
@@ -42,19 +37,12 @@ function createTextInput() {
     newLi.appendChild(newDiv)
 
     //criar novo botão de subir e descer
-    let newUpButton = document.createElement('button')
-    let newDownButton = document.createElement('button')
+    let newMoveButton = document.createElement('button')
+    newMoveButton.className = 'material-symbols-outlined scale-[0.7] text-gray-700'
+    newMoveButton.innerText = 'more_vert'
+    newDiv.appendChild(newMoveButton)
 
-    function upDownButtons(button, str) {
-        button.className = 'material-symbols-outlined scale-[0.7] text-gray-700'
-        button.innerText = `keyboard_arrow_${str}`
-        newDiv.appendChild(button)
-    }
-    upDownButtons(newUpButton, 'up')
-    upDownButtons(newDownButton, 'down')
-
-    newUpButton.addEventListener('click',() => moveItem(newUpButton, -1))
-    newDownButton.addEventListener('click',() => moveItem(newDownButton, 1))
+    newMoveButton.addEventListener('mousedown')
 
     //criar novo input
     let newInput = document.createElement('input')
